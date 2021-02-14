@@ -1,13 +1,13 @@
 import { expect as expectCDK, matchTemplate, MatchStyle } from '@aws-cdk/assert';
 import * as cdk from '@aws-cdk/core';
-import * as SampleCdk from '../lib/sample-cdk-stack';
+import * as Bastion from '../lib/bastion-stack';
 
 test('Empty Stack', () => {
-    const app = new cdk.App();
-    // WHEN
-    const stack = new SampleCdk.SampleCdkStack(app, 'MyTestStack');
-    // THEN
-    expectCDK(stack).to(matchTemplate({
-      "Resources": {}
-    }, MatchStyle.EXACT))
+  const app = new cdk.App();
+  // WHEN
+  const stack = new Bastion.BastionStack(app, 'MyTestStack');
+  // THEN
+  expectCDK(stack).to(matchTemplate({
+    "Resources": {}
+  }, MatchStyle.EXACT))
 });
